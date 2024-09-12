@@ -15,7 +15,6 @@ const FormObject = (props) => {
     }
 
     const createAlbum = (e) => {
-
         e.preventDefault()
 
         console.log('Album', album)
