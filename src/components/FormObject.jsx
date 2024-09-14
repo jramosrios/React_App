@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './form.css'
 const FormObject = (props) => {
     const [album, setAlbum] = useState({
         albumName: '',
@@ -15,6 +15,7 @@ const FormObject = (props) => {
     }
 
     const createAlbum = (e) => {
+
         e.preventDefault()
 
         console.log('Album', album)

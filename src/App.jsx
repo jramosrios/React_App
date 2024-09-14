@@ -6,6 +6,7 @@ function App() {
 
   return (
     <div>
+      <FormObject />
       <Nav
         userName={'Gabe'}
         favLang={'JavaScript'}
@@ -38,7 +39,6 @@ function App() {
         genre={'Trap'}
         albumSales={50}
       />
-      <FormObject />
     </div>
   )
 }
