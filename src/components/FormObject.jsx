@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './form.css'
 const FormObject = (props) => {
+    const { albumList, setAlbumList } = props
     const [album, setAlbum] = useState({
         albumName: '',
         artist: '',
@@ -8,7 +9,7 @@ const FormObject = (props) => {
         genre: ''
     })
     const [error, setError] = useState('')
-    const [albumList, setAlbumList] = useState([])
+
 
     const handleAlbum = (e) => {
         // console.log('Event Target Name', e.target.name)
@@ -78,26 +79,6 @@ const FormObject = (props) => {
 
                 <button>Add album!</button>
             </form>
-
-            <div>
-                <p>Album Name: {album.albumName}</p>
-                <p>Release Year: {album.releaseYear}</p>
-                <p>Artist: {album.artist}</p>
-                <p>Genre: {album.genre}</p>
-            </div>
-
-            {
-                albumList && albumList.length > 0 ?
-                    albumList.map((a) => (
-                        <div>
-                            <p>{a.albumName}</p>
-                            <p>{a.artist}</p>
-                            <p>{a.genre}</p>
-                            <p>{a.releaseYear}</p>
-                        </div>
-                    )) :
-                    null
-            }
 
         </div>
     )
