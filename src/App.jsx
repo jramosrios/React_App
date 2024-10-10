@@ -13,6 +13,7 @@ function App() {
       />
       <Display
         albumList={albumList}
+        setAlbumList={setAlbumList}
       />
     </div>
   )

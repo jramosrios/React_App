@@ -6,7 +6,8 @@ const FormObject = (props) => {
         albumName: '',
         artist: '',
         releaseYear: 1930,
-        genre: ''
+        genre: '',
+        isExplicit: false
     })
     const [error, setError] = useState('')
 
@@ -14,7 +15,12 @@ const FormObject = (props) => {
     const handleAlbum = (e) => {
         // console.log('Event Target Name', e.target.name)
         // console.log('Event Target Value', e.target)
-        setAlbum({ ...album, [e.target.name]: e.target.value })
+        if (e.target.type === 'checkbox') {
+            setAlbum({ ...album, isExplicit: e.target.checked })
+        }
+        else {
+            setAlbum({ ...album, [e.target.name]: e.target.value })
+        }
     }
 
     const createAlbum = (e) => {
@@ -32,7 +38,8 @@ const FormObject = (props) => {
                 albumName: '',
                 artist: '',
                 releaseYear: 1930,
-                genre: ''
+                genre: '',
+                isExplicit: false
             })
         }
     }
@@ -76,7 +83,8 @@ const FormObject = (props) => {
                         <p>Genre must be at least 3 characters</p> :
                         null
                 }
-
+                <label htmlFor="explicit">Explicit?</label>
+                <input type="checkbox" name="isExplicit" onChange={handleAlbum} checked={album.isExplicit} />
                 <button>Add album!</button>
             </form>
 
